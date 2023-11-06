@@ -18,39 +18,73 @@
             text-decoration: none ;   
             color: black;
             }
-    .logo{
-        font-family: arial;
-        font-weight: bold;
-        font-size: 40px;
-        }
-    .start{
-        display: flex;
-        justify-content: space-between;
-        width: 100vw;
-        height: 100vh;
-        margin: 30px ;
-        padding: 40px;
-    }
+            
+           
+           
     
     </style>
+
+    <script>
+        function darkMode(){
+            var chkTheme= document.getElementById("chkTheme");
+            var form= document.querySelector("form");
+            var face= document.getElementById("face");
+            var insta= document.getElementById("insta");
+            var login= document.getElementById("login");
+            var amaz= document.getElementById("amaz");
+            var port= document.getElementById("port");
+            var text= document.getElementById("text");
+            var rajesh=document.getElementById("rajesh");
+            
+            if(chkTheme.checked){
+                form.className="bg-dark border border-2 rounded  p-4 m-5"
+                face.className="btn btn-light fw-bold p-3 mt-3 ms-5"
+                insta.className="btn btn-light fw-bold mt-3  p-3"
+                login.className="btn btn-light fw-bold p-3"
+                amaz.className="btn btn-light fw-bold me-5 p-3"
+                port.className="btn btn-light fw-bold me-5 p-3"
+                text.className="text-white fw-bold "
+                rajesh.className="text-white fw-bold ms-4 p-5" 
+            }
+            else{
+                form.className="bg-light border border-2 rounded border-dark p-4 m-5"
+                face.className="btn  btn-outline-success fw-bold p-3 mt-3 ms-5"
+                insta.className="btn btn-outline-primary  fw-bold mt-3  p-3"
+                login.className="btn btn-outline-warning fw-bold  p-3"
+                amaz.className="btn btn-outline-danger fw-bold me-5 p-3"
+                port.className="btn btn-outline-info  fw-bold me-5 p-3"
+                text.className="text-dark fw-bold "
+                rajesh.className="text-dark fw-bold ms-4 p-5" 
+            }
+        }
+    </script>
    </head>
-   <body>
-    <div class="start">
-<div>
-    <img src="public/images/pic.jpg" class="ms-4" width="200" height="200">
-</div>
-    <h2 class=" logo  p-5"> Rajesh Kapal</h2>
-    <div class="btn btn- w-100  p-5 ">
-       <li class="btn btn-outline-info text- fw-bold me-5 p-3"><a href="./portfolio.html">Resume</a> </li>
-       <li class="btn btn-outline-danger fw-bold me-5 p-3"><a href="./amazon.html">Amazon Register</a></li>
-       <li class="btn btn-outline-warning fw-bold p-3"><a href="./login-page.html">Responsive Login page</a></li>
-       <li class="btn btn-outline-primary  fw-bold mt-3  p-3"><a href="./instagram.html">Instagram </a></li>
-       <li class="btn btn-outline-success  fw-bold mt-3 ms-5 p-3"><a href="./facebook.html">Facebook </a></li>
+   <body class="container-fluid bg-body-secondary">
+    <form class="border border-2 rounded border-dark p-4 m-5" style="height:80vh;" >
 
-       
+       <div class="form-switch d-flex justify-content-left ms-5 align-items-center p-4 mt-4 ">
+           <input type="checkbox" id="chkTheme" onchange="darkMode()" class="form-check-input"> &nbsp; &nbsp;
+           <label class="form-check-label fw-bold" style="font-size: 20px; " id="text">Dark Mode</label>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+    <div>
+        <img src="public/images/ye-bg.png"  class="ms-4" width="200" height="200">
     </div>
 
+        <h2 class="ms-4 fw-bold p-5" id="rajesh">Rajesh Kapal</h2>
+
+
+        <div class="btn btn- w-100  p-5 ">
+            <li class="btn btn-outline-info text- fw-bold me-5 p-3" id="port"><a href="./portfolio.html">Resume</a> </li>
+            <li class="btn btn-outline-danger fw-bold me-5 p-3" id="amaz"><a href="./amazon.html">Amazon Register</a></li>
+            <li class="btn btn-outline-warning fw-bold  p-3" id="login"><a href="./login-page.html">Responsive Login page</a></li>
+            <li class="btn btn-outline-primary  fw-bold mt-3  p-3" id="insta"><a href="./instagram.html">Instagram </a></li>
+            <li class="btn btn-outline-success  fw-bold mt-3 ms-5 p-3" id="face"><a href="./facebook.html">Facebook </a></li> 
+        </div>
+
     </div>
+    </form>
 
 
    </body>
