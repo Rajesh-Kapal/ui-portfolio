@@ -35,6 +35,7 @@
             var port= document.getElementById("port");
             var text= document.getElementById("text");
             var rajesh=document.getElementById("rajesh");
+            var calc=document.getElementById("calc");
             
             if(chkTheme.checked){
                 form.className="bg-dark border border-2 rounded  p-4 m-5"
@@ -44,7 +45,8 @@
                 amaz.className="btn btn-light fw-bold me-5 p-3"
                 port.className="btn btn-light fw-bold me-5 p-3"
                 text.className="text-white fw-bold "
-                rajesh.className="text-white fw-bold ms-4 p-5" 
+                rajesh.className="text-white fw-bold ms-4 p-5 size-5"
+                calc.className="btn btn-light fw-bold mt-3 ms-5 p-3"
             }
             else{
                 form.className="bg-light border border-2 rounded border-dark p-4 m-5"
@@ -55,6 +57,8 @@
                 port.className="btn btn-outline-info  fw-bold me-5 p-3"
                 text.className="text-dark fw-bold "
                 rajesh.className="text-dark fw-bold ms-4 p-5" 
+                calc.className="btn btn-outline-primary fw-bold mt-3 ms-5 p-3"
+
             }
         }
     </script>
@@ -72,7 +76,7 @@
         <img src="public/images/ye-bg.png"  class="ms-4" width="200" height="200">
     </div>
 
-        <h2 class="ms-4 fw-bold p-5" id="rajesh">Rajesh Kapal</h2>
+        <h2 class="ms-4 fw-bold p-5"  id="rajesh">Rajesh Kapal</h2>
 
 
         <div class="btn btn- w-100  p-5 ">
@@ -81,6 +85,8 @@
             <li class="btn btn-outline-warning fw-bold  p-3" id="login"><a href="./login-page.html">Responsive Login page</a></li>
             <li class="btn btn-outline-primary  fw-bold mt-3  p-3" id="insta"><a href="./instagram.html">Instagram </a></li>
             <li class="btn btn-outline-success  fw-bold mt-3 ms-5 p-3" id="face"><a href="./facebook.html">Facebook </a></li> 
+            <li class="btn btn-outline-primary  fw-bold mt-3 ms-5 p-3" id="calc"><a href="./Calculation.html">Calculation </a></li> 
+
         </div>
 
     </div>
