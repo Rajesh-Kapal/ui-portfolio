@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC Online Website</title>
+    <link rel="shortcut icon" href="../public/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    
+       
+    <script type="text/javascript">
+        function PlaceOrder(){
+            document.getElementById("lblName").innerHTML = document.getElementById("txtName").value;
+            document.getElementById("lblMobile").innerHTML = document.getElementById("txtMobile").value;
+           
+            var foodName = "";
+            var foodCost = 0;
+
+            var addOnName = "";
+            var addOnCost = 0;
+
+            var ImgM = document.getElementById("ImgM");
+
+            //Radios
+
+            var kfc1 = document.getElementById("kfc1");
+            var kfc2 = document.getElementById("kfc2");
+            var kfc3 = document.getElementById("kfc3");
+
+            if(kfc1.checked){
+                foodName = kfc1.value;
+                foodCost = 120;
+                ImgM.src="../public/images/kfc1.jpg";
+
+            }
+            if(kfc2.checked){
+                foodName = kfc2.value;
+                foodCost = 150;
+                ImgM.src="../public/images/kfc6.jpg";
+
+            }
+            if(kfc3.checked){
+                foodName = kfc3.value;
+                foodCost = 100;
+                ImgM.src="../public/images/kfc5.jpg";
+
+            }
+
+            //checkbox
+
+            var kfc4 = document.getElementById("kfc4");
+            var kfc5 = document.getElementById("kfc5");
+            var kfc6 = document.getElementById("kfc6");
+
+            if(kfc4.checked){
+                addOnName += kfc4.value + "<br>";
+                addOnCost += 110;
+                foodCost += addOnCost;
+            }
+            if(kfc5.checked){
+                addOnName +=kfc5.value + "<br>";
+                addOnCost += 99;
+                foodCost += addOnCost;
+
+
+            }
+            if(kfc6.checked){
+                addOnName += kfc6.value + "<br>";
+                addOnCost += 89;
+                foodCost += addOnCost;
+
+            }
+
+
+            document.getElementById("lblFood").innerHTML = foodName;
+            document.getElementById("lblAddOn").innerHTML = addOnName;
+            document.getElementById("lblTotal").innerHTML = foodCost.toLocaleString('en-in',{style:'currency',currency:'INR'});
+           
+
+            var now =new Date();
+            now.getDate();
+            document.getElementById("lblDate").innerHTML = now.toDateString ();
+            document.getElementById("lblTime").innerHTML = now.toLocaleTimeString();
+
+           
+        }
+    </script>
+</head>
+<body class="container-fluid bg-danger text-secondary text-center">
+    <header>
+        <img src="../public/images/banner55.png" width="100%" height="300">
+
+    </header>
+
+    <br>
+    <br>
+    <section class=" d-flex justify-content-around align-items-center">
+
+        <div class="accordion  d-flex justify-content-lg-between align-items-center" id="kfc">
+
+            <!--Customer -->
+            <div class="accordion-item me-5 border rounded-3">
+                <div class="accordion-header">
+                    <button class="btn btn-light text-danger     fw-bold w-100 p-3" data-bs-target="#customer" data-bs-toggle="collapse">Customer Details</button>
+                </div>
+
+                <div class="accordion-collapse collapse p-2 bg-info" id="customer" data-bs-parent="#kfc">
+                    <div class="accordion-body w-100 "  >
+                        <dl>
+                            <dt>Customer Name :</dt><dd><input type="text" class="form-control" id="txtName"></dd>
+                            <dt>Mobile Number :</dt>
+                            <dd><input type="text" class="form-control" id="txtMobile"></dd>
+            
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!--Dishes-->
+
+            <div class="accordion-item border rounded-3">
+                <div class="accordion-header">
+                    <button class="btn btn-light text-danger fw-bold p-3 w-100 " data-bs-target="#Dish" data-bs-toggle="collapse" >Choose Your Food</button>
+                </div>
+
+               <div class="accordion-collapse collapse p-2 bg-info " id="Dish" data-bs-parent="#kfc">
+                    <div class="accordion-body " >
+                        <div class="row">
+                            <div class="col text-center">
+                                <img src="../public/images/kfc1.jpg"  width="50%">
+                                <div class="mt-2 fw-bold h6">
+                                    <input type="radio" name="dish" id="kfc1" value="KFC chicken" class="form-check-input"> <span> PERI PERI CHICKEN &#8377; 120/-</span>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <img src="../public/images/kfc6.jpg"   width="50%">
+                                <div class="mt-2 h6 fw-bold">
+                                    <input type="radio" name="dish" id="kfc2" value="KFC Biryani" class="form-check-input"> <span>  BIRYANI BUCKETS &#8377; 150/-</span>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <img src="../public/images/kfc5.jpg"  width="50%">
+                                <div class="mt-2 h6 fw-bold">
+                                    <input type="radio" name="dish" id="kfc3" value="KFC Burger" class="form-check-input"> <span> BURGERS  &#8377; 100/-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+
+
+            <!--Add-ons-->
+
+            <div class="accordion-item  ms-5 border rounded-3">
+                <div class="accordion-header">
+                    <button class="btn btn-light text-danger  fw-bold p-3  w-100 "  data-bs-target="#Addon" data-bs-toggle="collapse">Add More Items</button>
+                </div>
+
+                <div class="accordion-collapse collapse" id="Addon" data-bs-parent="#kfc">
+                    <div class="accordion-body bg-info" >
+                        <div class="row">
+                            <div class="col text-center">
+                                <img src="../public/images/kfc3.jpg" width="50%">
+                                <div class="mt-2 h6 fw-bold">
+                                    <input type="checkbox" id="kfc4" value="KFC Wings" class="form-check-input"> <span> CHICKEN BUCKETS &#8377; 110/-</span>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <img src="../public/images/kfc4.jpg"  width="50%">
+                                <div class="mt-2 h6 fw-bold">
+                                    <input type="checkbox" id="kfc5" value="KFC Roll" class="form-check-input"> <span> CHICKEN ROLLS &#8377; 99/-</span>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <img src="../public/images/kfc2.jpg"  width="50%">
+                                <div class="mt-2 h6 fw-bold">
+                                    <input type="checkbox" id="kfc6" value="KFC Snack" class="form-check-input"> <span> VALUE SNACKS &#8377; 89/-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <button onclick="PlaceOrder()" class="btn btn-warning p-3 fw-bold w-25" data-bs-target="#bill" data-bs-toggle="modal">Place Order</button>
+        <div class="modal fade" id="bill">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="text-primary fw-bold">KFC INVOICE</h5>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-dark">
+                       <div class="row">
+                        <div class="col" style="align-items: end;">
+                            <dl>
+                                <dt >Name :</dt>
+                                <dd id="lblName" class="fw-bold"></dd>
+                                <dt>Mobile Number :</dt>
+                                <dd id="lblMobile" class="fw-bold"></dd>
+                                <dt>Foods Items :</dt>
+                                <dd id="lblFood" class="fw-bold"></dd>
+                                <dt>Add Items :</dt>
+                                <dd id="lblAddOn" class="fw-bold"></dd>
+                                <br>
+                                <div class="w-100" style="border: 1px solid black; border-left:transparent ; border-right:transparent ; border-bottom: black;">
+                                <dt>Total</dt>
+                                <dd id="lblTotal" class="fw-bold text-primary fs-5 text-center"></dd>
+                                </div>                             
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>Date :</dt>
+                                <dd id="lblDate" class="fw-bold"></dd>
+                                <dt>Time :</dt>
+                                <dd id="lblTime" class="fw-bold"></dd>
+                            </dl>
+                            <img id="ImgM" width="100%">
+
+                        </div>
+                       </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <span class="fw-bold fs-5 text-success">Thank You...<span class="bi bi-emoji-smile text-success"></span> &nbsp;   &nbsp;   &nbsp; Visit Again...!</span>
+                        <button class="btn btn-outline-primary">Pay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
